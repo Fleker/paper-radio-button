@@ -20,6 +20,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script type="module">
     import '@polymer/iron-demo-helpers/demo-snippet.js';
     import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '@polymer/iron-icon/iron-icon.js';
+    import '@polymer/iron-icons/iron-icons.js';
     import '../paper-radio-button.js';
 
     import {html} from '@polymer/polymer/lib/utils/html-tag.js';
@@ -45,16 +47,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <h3>Radio buttons can be checked or unchecked, or disabled entirely</h3>
     <demo-snippet class="centered-demo">
       <template>
-        <paper-radio-button>Radio</paper-radio-button>
-        <paper-radio-button checked>Radio</paper-radio-button>
-        <paper-radio-button disabled>Disabled</paper-radio-button>
+        <paper-radio-button>
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Radio
+        </paper-radio-button>
+        <paper-radio-button checked>
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Radio
+        </paper-radio-button>
+        <paper-radio-button disabled>
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Disabled
+        </paper-radio-button>
       </template>
     </demo-snippet>
 
     <h3>Radio buttons can hide the ripple effect using the <i>noink</i> attribute</h3>
     <demo-snippet class="centered-demo">
       <template>
-        <paper-radio-button noink>Radio</paper-radio-button>
+        <paper-radio-button noink>
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Radio
+        </paper-radio-button>
       </template>
     </demo-snippet>
 
@@ -80,8 +102,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </style>
         </custom-style>
 
-        <paper-radio-button class="red">Radio</paper-radio-button>
-        <paper-radio-button checked class="green">Radio</paper-radio-button>
+        <paper-radio-button class="red">
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Radio
+        </paper-radio-button>
+        <paper-radio-button checked class="green">
+          <span slot="icon">
+            <iron-icon icon="search"></iron-icon>
+          </span>
+          Radio
+        </paper-radio-button>
       </template>
     </demo-snippet>
   </div>

@@ -80,8 +80,8 @@ Polymer({
         @apply --layout-inline;
         @apply --layout-center-center;
         position: relative;
-        width: var(--calculated-paper-radio-button-size);
-        height: var(--calculated-paper-radio-button-size);
+        width: 24px;
+        height: 24px;
         vertical-align: middle;
 
         @apply --paper-radio-button-radio-container;
@@ -112,31 +112,12 @@ Polymer({
         left: 0;
         width: 100%;
         height: 100%;
-        border-radius: 50%;
-      }
-
-      #offRadio {
-        border: 2px solid var(--paper-radio-button-unchecked-color, var(--primary-text-color));
-        background-color: var(--paper-radio-button-unchecked-background-color, transparent);
-        transition: border-color 0.28s;
-      }
-
-      #onRadio {
-        background-color: var(--paper-radio-button-checked-color, var(--primary-color));
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        transition: -webkit-transform ease 0.28s;
-        transition: transform ease 0.28s;
-        will-change: transform;
+        font-size: 12pt;
+        transition: color ease 0.28s;
       }
 
       :host([checked]) #offRadio {
-        border-color: var(--paper-radio-button-checked-color, var(--primary-color));
-      }
-
-      :host([checked]) #onRadio {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
+        color: var(--paper-radio-button-checked-color, var(--primary-color));
       }
 
       #radioLabel {
@@ -167,12 +148,11 @@ Polymer({
       /* disabled state */
 
       :host([disabled]) #offRadio {
-        border-color: var(--paper-radio-button-unchecked-color, var(--primary-text-color));
         opacity: 0.5;
       }
 
       :host([disabled][checked]) #onRadio {
-        background-color: var(--paper-radio-button-unchecked-color, var(--primary-text-color));
+        color: var(--paper-radio-button-unchecked-color, var(--primary-text-color));
         opacity: 0.5;
       }
 
@@ -183,7 +163,9 @@ Polymer({
     </style>
 
     <div id="radioContainer">
-      <div id="offRadio"></div>
+      <div id="offRadio">
+        <slot name="icon"></slot>
+      </div>
       <div id="onRadio"></div>
     </div>
 
